@@ -41,19 +41,13 @@ public:
     StoreChunkResult store_chunk(const ByteBuffer& chunk);
     std::vector<StoreChunkResult> store_file(const std::string& file_path);
 
-    struct FileChunkManifest {
-        std::string relative_path;
-        std::uint64_t file_size = 0;
-        std::vector<ChunkID> ordered_chunk_ids;
-    };
+    FileChunkManifest ingest_file_manifest(const std::string& file_path,
+                                           const std::string& relative_path);
 
-    struct FolderIngestResult {
-        std::vector<FileChunkManifest> files;
-        std::uint64_t total_files = 0;
-        std::uint64_t total_chunks = 0;
-        std::uint64_t unique_new_chunks = 0;
-        std::uint64_t duplicate_chunks = 0;
-    };
+    FolderIngestResult ingest_folder(const std::string& folder_path);
+
+    bool export_manifest_text(const FolderIngestResult& result,
+                              const std::string& out_file) const;
 
     std::optional<ByteBuffer> read_chunk(const ChunkID& chunk_id) const;
 
