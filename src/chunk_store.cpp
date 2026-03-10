@@ -1,5 +1,5 @@
 #include "chunk_store.hpp"
-
+#include "picosha2.h"
 #include <filesystem>
 #include <fstream>
 #include <functional>
