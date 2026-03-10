@@ -1,32 +1,26 @@
 #include "chunk_store.hpp"
 
-#include <filesystem>
-#include <fstream>
 #include <iostream>
 #include <string>
 
-namespace fs = std::filesystem;
 using namespace layer1;
 
-static void write_demo_file(const std::string& path, const std::string& content) {
-    std::ofstream ofs(path, std::ios::binary | std::ios::trunc);
-    ofs << content;
-}
-
-int main() {
+int main(int argc, char* argv[]) {
     try {
+        if (argc < 2) {
+            std::cerr << "Usage: layer1_demo <folder_path>\n";
+            return 1;
+        }
+
+        std::string folder_path = argv[1];
+
         ChunkStore store("data_storage", 8);
         if (!store.init()) {
             std::cerr << "Failed to initialize ChunkStore\n";
             return 1;
         }
 
-        fs::create_directories("uploaded_folder/sub");
-        write_demo_file("uploaded_folder/a.txt", "AAAABBBBCCCCDDDDAAAABBBB");
-        write_demo_file("uploaded_folder/b.txt", "AAAABBBB");
-        write_demo_file("uploaded_folder/sub/c.txt", "CCCCDDDDAAAABBBB");
-
-        auto result = store.ingest_folder("uploaded_folder");
+        auto result = store.ingest_folder(folder_path);
 
         std::cout << "Total files: " << result.total_files << "\n";
         std::cout << "Total chunks: " << result.total_chunks << "\n";
