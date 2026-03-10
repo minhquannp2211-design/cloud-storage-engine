@@ -1,6 +1,0 @@
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/layer1.dir
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/layer1_demo.dir
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/test_smoke.dir
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/test.dir
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/file/cloud storage/cloud_storage_manifest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
