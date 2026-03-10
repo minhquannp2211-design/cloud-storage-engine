@@ -9,4 +9,5 @@ class UploadService
 {
 public:
     void UploadFile(const std::string& filePath);
+    void UploadFolder(const std::string& folderPath);
 };
