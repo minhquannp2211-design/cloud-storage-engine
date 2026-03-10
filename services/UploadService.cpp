@@ -1,35 +1,24 @@
 #include "UploadService.h"
 #include <iostream>
-#include "../utils/Chunker.h"
-#include "../utils/Hash.h"
+#include "../managers/FileStructureBuilder.h"
+#include "../managers/NamespaceManager.h"
+#include "../include/chunk_store.hpp"   
 
 void UploadService::UploadFile(const std::string& filePath)
 {
     std::cout << "Uploading file: " << filePath << std::endl;
 
-    auto chunks = Chunker::Split(filePath);
-    if (chunks.empty()) {
-        std::cout << "No chunks produced (file missing or empty)\n";
+    layer1::ChunkStore store("data_storage", 4096);
+    if (!store.init()) {
+        std::cout << "Failed to initialize Layer 1 store\n";
         return;
     }
 
-    IndexManager index;
+    layer1::FileChunkManifest manifest = store.ingest_file_manifest(filePath, filePath);
+
     FileStructureBuilder builder;
-    std::vector<std::string> hashes;
-    hashes.reserve(chunks.size());
+    auto record = builder.BuildFileRecord(manifest.relative_path, manifest.ordered_chunk_ids);
 
-    for (auto& c : chunks)
-    {
-        const std::string& h = c.hash;
-        if (!index.CheckChunkExists(h))
-            index.RegisterNewChunk(h);
-        else
-            index.IncrementReference(h);
-
-        hashes.push_back(h);
-    }
-
-    auto record = builder.BuildFileRecord(filePath, hashes);
     NamespaceManager ns;
     ns.RegisterFile(record);
 
