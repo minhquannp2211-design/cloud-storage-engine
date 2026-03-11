@@ -1,4 +1,5 @@
 #include "DeleteService.h"
+#include "../managers/NamespaceManager.h"
 #include "../include/chunk_store.hpp"
 
 #include <iostream>
@@ -40,4 +41,5 @@ void DeleteService::DeleteFile(const std::string& fileName)
     std::cout << "File deleted: " << fileName << std::endl;
     std::cout << "GC removed " << removed << " chunk(s)\n";
 }
+
 
