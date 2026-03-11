@@ -1,13 +1,12 @@
 #include "DeleteService.h"
 #include "../managers/NamespaceManager.h"
-#include "../managers/IndexManager.h"
+#include "../include/chunk_store.hpp"
 
 #include <iostream>
 
 void DeleteService::DeleteFile(const std::string& fileName)
 {
     NamespaceManager ns;
-    IndexManager index;
 
     if (!ns.FileExists(fileName))
     {
@@ -23,10 +22,22 @@ void DeleteService::DeleteFile(const std::string& fileName)
 
     auto file = opt.value();
 
-    for (const auto& hash : file.chunkHashes)
-        index.DecrementReference(hash);
+    layer1::ChunkStore store("data_storage", 4096);
+    if (!store.init()) {
+        std::cout << "Failed to initialize Layer 1 store\n";
+        return;
+    }
+
+    for (const auto& chunk_id : file.chunkHashes) {
+        if (!store.dec_ref(chunk_id)) {
+            std::cout << "Warning: dec_ref failed for chunk " << chunk_id << "\n";
+        }
+    }
+
+    std::size_t removed = store.gc();
 
     ns.DeleteFile(fileName);
 
     std::cout << "File deleted: " << fileName << std::endl;
+    std::cout << "GC removed " << removed << " chunk(s)\n";
 }
