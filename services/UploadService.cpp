@@ -2,7 +2,7 @@
 #include <iostream>
 #include "../managers/FileStructureBuilder.h"
 #include "../managers/NamespaceManager.h"
-#include "../include/chunk_store.hpp"   
+#include "../include/chunk_store.hpp"
 
 void UploadService::UploadFile(const std::string& filePath)
 {
@@ -17,9 +17,25 @@ void UploadService::UploadFile(const std::string& filePath)
     layer1::FileChunkManifest manifest = store.ingest_file_manifest(filePath, filePath);
 
     FileStructureBuilder builder;
-    auto record = builder.BuildFileRecord(manifest.relative_path, manifest.ordered_chunk_ids);
-
     NamespaceManager ns;
+    int userId = 1;
+
+    int fileID = builder.CreateFileEntry(
+        manifest.relative_path,
+        userId,
+        static_cast<long>(manifest.file_size)
+    );
+
+    builder.LinkChunksToFile(fileID, manifest.ordered_chunk_ids);
+
+    FileRecord record = builder.BuildFileRecord(
+        manifest.relative_path,
+        manifest.ordered_chunk_ids
+    );
+    record.fileID = fileID;
+    record.userID = userId;
+    record.totalSize = static_cast<long>(manifest.file_size);
+
     ns.RegisterFile(record);
 
     std::cout << "Upload complete\n";
@@ -39,9 +55,25 @@ void UploadService::UploadFolder(const std::string& folderPath)
 
     FileStructureBuilder builder;
     NamespaceManager ns;
+    int userId = 1;
 
     for (const auto& file : result.files) {
-        auto record = builder.BuildFileRecord(file.relative_path, file.ordered_chunk_ids);
+        int fileID = builder.CreateFileEntry(
+            file.relative_path,
+            userId,
+            static_cast<long>(file.file_size)
+        );
+
+        builder.LinkChunksToFile(fileID, file.ordered_chunk_ids);
+
+        FileRecord record = builder.BuildFileRecord(
+            file.relative_path,
+            file.ordered_chunk_ids
+        );
+        record.fileID = fileID;
+        record.userID = userId;
+        record.totalSize = static_cast<long>(file.file_size);
+
         ns.RegisterFile(record);
     }
 
