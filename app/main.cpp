@@ -1,4 +1,7 @@
 #include "../services/UploadService.h"
+#include "../services/DownloadService.h"
+#include "../services/DeleteService.h"
+
 #include <iostream>
 #include <string>
 
@@ -7,6 +10,8 @@ int main(int argc, char* argv[]) {
         std::cout << "Usage:\n";
         std::cout << "  app_demo upload-file <file_path>\n";
         std::cout << "  app_demo upload-folder <folder_path>\n";
+        std::cout << "  app_demo download-file <logical_path>\n";
+        std::cout << "  app_demo delete-file <logical_path>\n";
         return 1;
     }
 
@@ -14,11 +19,18 @@ int main(int argc, char* argv[]) {
     std::string path = argv[2];
 
     UploadService uploadService;
+    DownloadService downloadService;
+    DeleteService deleteService;
 
     if (command == "upload-file") {
         uploadService.UploadFile(path);
     } else if (command == "upload-folder") {
         uploadService.UploadFolder(path);
+    } else if (command == "download-file") {
+        std::string content = downloadService.DownloadFile(path);
+        std::cout << content << "\n";
+    } else if (command == "delete-file") {
+        deleteService.DeleteFile(path);
     } else {
         std::cout << "Unknown command: " << command << "\n";
         return 1;
