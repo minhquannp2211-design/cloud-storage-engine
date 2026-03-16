@@ -32,18 +32,18 @@ add_executable(layer1_demo
 target_link_libraries(layer1_demo PRIVATE layer1)
 
 add_library(appcore
-    database/Database.cpp
+    layer2/database/Database.cpp
 
-    managers/FileStructureBuilder.cpp
-    managers/IndexManager.cpp
-    managers/NamespaceManager.cpp
+    layer2/managers/FileStructureBuilder.cpp
+    layer2/managers/IndexManager.cpp
+    layer2/managers/NamespaceManager.cpp
 
-    services/UploadService.cpp
-    services/DownloadService.cpp
-    services/DeleteService.cpp
+    layer2/services/UploadService.cpp
+    layer2/services/DownloadService.cpp
+    layer2/services/DeleteService.cpp
 
-    utils/Chunker.cpp
-    utils/Hash.cpp
+    layer2/utils/Chunker.cpp
+    layer2/utils/Hash.cpp
 )
 
 target_include_directories(appcore PUBLIC
@@ -59,7 +59,7 @@ target_include_directories(appcore PUBLIC
 target_link_libraries(appcore PRIVATE layer1)
 
 add_executable(app_demo
-    app/main.cpp
+    layer2/app/main.cpp
 )
 
 target_link_libraries(app_demo PRIVATE appcore layer1)
@@ -67,7 +67,7 @@ target_link_libraries(app_demo PRIVATE appcore layer1)
 enable_testing()
 
 add_executable(test_smoke
-    test/test_smoke.cpp
+    tests/test_smoke.cpp
 )
 
 target_link_libraries(test_smoke PRIVATE layer1)
