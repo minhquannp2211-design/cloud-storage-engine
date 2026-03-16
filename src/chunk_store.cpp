@@ -33,20 +33,9 @@ bool ChunkStore::rebuild_bloom_from_index() {
         bloom_.add(chunk_id);
     }
     return true;
-}
-
-ChunkID ChunkStore::hash_chunk(const ByteBuffer& chunk) const {
-    std::hash<std::string> hasher;
-    std::string data_str(chunk.begin(), chunk.end());
-
-    std::size_t h1 = hasher(data_str);
-    std::size_t h2 = hasher("salt1" + data_str);
-    std::size_t h3 = hasher("salt2" + data_str);
-    std::size_t h4 = hasher("salt3" + data_str);
-
-    std::ostringstream oss;
-    oss << std::hex << h1 << h2 << h3 << h4;
-    return oss.str();
+}ChunkID ChunkStore::hash_chunk(const ByteBuffer& chunk) const {
+    std::string data_str(reinterpret_cast<const char*>(chunk.data()), chunk.size());
+    return picosha2::hash256_hex_string(data_str);
 }
 
 std::string ChunkStore::make_relative_chunk_path(const ChunkID& chunk_id) const {
