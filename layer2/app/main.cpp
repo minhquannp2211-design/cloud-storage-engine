@@ -1,11 +1,29 @@
 #include "../services/UploadService.h"
 #include "../services/DownloadService.h"
 #include "../services/DeleteService.h"
+#include "../managers/NamespaceManager.h"
+#include "../managers/FileStructureBuilder.h"
+#include "../managers/RecoveryManager.h"
 
 #include <iostream>
 #include <string>
 
 int main(int argc, char* argv[]) {
+    // Initialize managers from database
+    try
+    {
+        std::cout << "=== Initializing Layer 2 ===\n";
+        RecoveryManager::RecoverFromCrash();
+        NamespaceManager::Initialize();
+        FileStructureBuilder::Initialize();
+        std::cout << "=== Initialization complete ===\n\n";
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Initialization failed: " << e.what() << "\n";
+        return 1;
+    }
+    
     if (argc < 3) {
         std::cout << "Usage:\n";
         std::cout << "  app_demo upload-file <file_path>\n";
@@ -38,3 +56,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
