@@ -1,0 +1,18 @@
+{
+  "project": 2,
+  "case": 4,
+  "upload": [
+    "f1.bin",
+    "f2.bin",
+    "f3.bin",
+    "f4.bin",
+    "f5.bin",
+    "f6.bin"
+  ],
+  "delete": [
+    "f2.bin",
+    "f3.bin",
+    "f4.bin"
+  ],
+  "expect_gc": true
+}

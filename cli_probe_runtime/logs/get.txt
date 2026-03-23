@@ -1,0 +1,8 @@
+=== Initializing Layer 2 ===
+RecoveryManager: Starting crash recovery...
+RecoveryManager: Recovery completed
+NamespaceManager initialized with 0 files
+FileStructureBuilder initialized with 0 files, next fileID = 1
+=== Initialization complete ===
+
+Unknown command: GET

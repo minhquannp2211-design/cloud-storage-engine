@@ -1,0 +1,21 @@
+{
+  "scenario_id": "gc_01",
+  "description": "Upload several files with shared chunks, then delete in order.",
+  "upload_order": [
+    "01_exact_duplicates/set_a/exact_payload_A_copy1.bin",
+    "02_near_duplicates_text/text_base_v1.txt",
+    "02_near_duplicates_text/notes_variant_01.md",
+    "03_near_duplicates_binary/binary_patch_v2.bin"
+  ],
+  "delete_order": [
+    "01_exact_duplicates/set_a/exact_payload_A_copy2.bin",
+    "02_near_duplicates_text/text_base_v1.txt"
+  ],
+  "expected": {
+    "some_chunks_remain": true,
+    "refCount_never_negative": true,
+    "gc_may_reclaim": [
+      "unique chunks from deleted file only"
+    ]
+  }
+}

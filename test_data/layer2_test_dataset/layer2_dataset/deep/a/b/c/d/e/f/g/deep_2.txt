@@ -1,0 +1,4 @@
+deep file 2
+Cloud storage layer 2 dataset.
+This file is generated for testing metadata mapping, Trie directory listing,
+upload/download/delete workflows, rollback scenarios, and dedup interactions.

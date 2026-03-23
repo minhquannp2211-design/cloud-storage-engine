@@ -1,0 +1,3 @@
+Bob profile
+team=metadata
+role=developer

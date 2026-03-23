@@ -1,0 +1,7 @@
+{
+  "snapshot_id": "snap_04",
+  "stored_chunks": 1548,
+  "live_refs": 2756,
+  "zero_ref_candidates": 14,
+  "notes": "Synthetic checkpoint for recovery smoke test"
+}

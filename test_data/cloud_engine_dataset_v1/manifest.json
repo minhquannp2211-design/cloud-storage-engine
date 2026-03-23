@@ -1,0 +1,20 @@
+{
+  "name": "cloud_engine_dataset_v1",
+  "purpose": [
+    "dedup",
+    "chunking",
+    "refCount",
+    "gc",
+    "recovery"
+  ],
+  "recommended_chunk_sizes": [
+    4096,
+    8192,
+    65536
+  ],
+  "notes": {
+    "exact_duplicates": "Các file copy giống hệt nhau phải dẫn tới chunk reuse tối đa.",
+    "near_duplicates_text": "Sửa nhỏ/chen ở đầu giữa cuối để so sánh fixed-size và CDC.",
+    "edge_cases": "Bao gồm empty, 1B, boundary quanh 4KiB/8KiB/64KiB."
+  }
+}

@@ -1,0 +1,890 @@
+[
+  {
+    "path": "README.md",
+    "size": 832
+  },
+  {
+    "path": "manifest.json",
+    "size": 497
+  },
+  {
+    "path": "01_exact_duplicates/set_a/exact_payload_A_copy1.bin",
+    "size": 2097152
+  },
+  {
+    "path": "01_exact_duplicates/set_a/exact_payload_A_copy2.bin",
+    "size": 2097152
+  },
+  {
+    "path": "01_exact_duplicates/set_a/exact_payload_A_copy3.bin",
+    "size": 2097152
+  },
+  {
+    "path": "01_exact_duplicates/set_a/exact_payload_A_copy4.bin",
+    "size": 2097152
+  },
+  {
+    "path": "01_exact_duplicates/set_a/exact_payload_A_copy5.bin",
+    "size": 2097152
+  },
+  {
+    "path": "01_exact_duplicates/set_b/exact_payload_B_copy1.txt",
+    "size": 900000
+  },
+  {
+    "path": "01_exact_duplicates/set_b/exact_payload_B_copy2.txt",
+    "size": 900000
+  },
+  {
+    "path": "01_exact_duplicates/set_b/exact_payload_B_copy3.txt",
+    "size": 900000
+  },
+  {
+    "path": "01_exact_duplicates/set_b/exact_payload_B_copy4.txt",
+    "size": 900000
+  },
+  {
+    "path": "01_exact_duplicates/set_c/exact_payload_C_copy1.img",
+    "size": 5242880
+  },
+  {
+    "path": "01_exact_duplicates/set_c/exact_payload_C_copy2.img",
+    "size": 5242880
+  },
+  {
+    "path": "01_exact_duplicates/set_c/exact_payload_C_copy3.img",
+    "size": 5242880
+  },
+  {
+    "path": "02_near_duplicates_text/text_base_v1.txt",
+    "size": 1200000
+  },
+  {
+    "path": "02_near_duplicates_text/text_insert_head_v2.txt",
+    "size": 1204801
+  },
+  {
+    "path": "02_near_duplicates_text/text_insert_middle_v3.txt",
+    "size": 1227600
+  },
+  {
+    "path": "02_near_duplicates_text/text_insert_tail_v4.txt",
+    "size": 1231500
+  },
+  {
+    "path": "02_near_duplicates_text/text_replace_sparse_v5.txt",
+    "size": 1201000
+  },
+  {
+    "path": "02_near_duplicates_text/text_minor_edits_v6.txt",
+    "size": 1200600
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_01.md",
+    "size": 1200480
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_02.md",
+    "size": 1200960
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_03.md",
+    "size": 1201440
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_04.md",
+    "size": 1201920
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_05.md",
+    "size": 1202400
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_06.md",
+    "size": 1202880
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_07.md",
+    "size": 1203360
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_08.md",
+    "size": 1203840
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_09.md",
+    "size": 1204320
+  },
+  {
+    "path": "02_near_duplicates_text/notes_variant_10.md",
+    "size": 1204800
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_base_v1.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_patch_v2.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_patch_v3.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_patch_v4.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_patch_v5.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_patch_v6.bin",
+    "size": 3145728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_insert_head_v7.bin",
+    "size": 3148728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_insert_middle_v8.bin",
+    "size": 3150728
+  },
+  {
+    "path": "03_near_duplicates_binary/binary_insert_tail_v9.bin",
+    "size": 3152728
+  },
+  {
+    "path": "04_edge_cases/empty_file.bin",
+    "size": 0
+  },
+  {
+    "path": "04_edge_cases/one_byte.bin",
+    "size": 1
+  },
+  {
+    "path": "04_edge_cases/ten_bytes.bin",
+    "size": 10
+  },
+  {
+    "path": "04_edge_cases/one_kib.bin",
+    "size": 1024
+  },
+  {
+    "path": "04_edge_cases/boundary_4096_plus_-2.bin",
+    "size": 4094
+  },
+  {
+    "path": "04_edge_cases/boundary_4096_plus_-1.bin",
+    "size": 4095
+  },
+  {
+    "path": "04_edge_cases/boundary_4096_plus_0.bin",
+    "size": 4096
+  },
+  {
+    "path": "04_edge_cases/boundary_4096_plus_1.bin",
+    "size": 4097
+  },
+  {
+    "path": "04_edge_cases/boundary_4096_plus_2.bin",
+    "size": 4098
+  },
+  {
+    "path": "04_edge_cases/exact_multiple_3x_4096.bin",
+    "size": 12288
+  },
+  {
+    "path": "04_edge_cases/boundary_8192_plus_-2.bin",
+    "size": 8190
+  },
+  {
+    "path": "04_edge_cases/boundary_8192_plus_-1.bin",
+    "size": 8191
+  },
+  {
+    "path": "04_edge_cases/boundary_8192_plus_0.bin",
+    "size": 8192
+  },
+  {
+    "path": "04_edge_cases/boundary_8192_plus_1.bin",
+    "size": 8193
+  },
+  {
+    "path": "04_edge_cases/boundary_8192_plus_2.bin",
+    "size": 8194
+  },
+  {
+    "path": "04_edge_cases/exact_multiple_3x_8192.bin",
+    "size": 24576
+  },
+  {
+    "path": "04_edge_cases/boundary_65536_plus_-2.bin",
+    "size": 65534
+  },
+  {
+    "path": "04_edge_cases/boundary_65536_plus_-1.bin",
+    "size": 65535
+  },
+  {
+    "path": "04_edge_cases/boundary_65536_plus_0.bin",
+    "size": 65536
+  },
+  {
+    "path": "04_edge_cases/boundary_65536_plus_1.bin",
+    "size": 65537
+  },
+  {
+    "path": "04_edge_cases/boundary_65536_plus_2.bin",
+    "size": 65538
+  },
+  {
+    "path": "04_edge_cases/exact_multiple_3x_65536.bin",
+    "size": 196608
+  },
+  {
+    "path": "04_edge_cases/short_text_1_lines.txt",
+    "size": 6
+  },
+  {
+    "path": "04_edge_cases/short_text_2_lines.txt",
+    "size": 13
+  },
+  {
+    "path": "04_edge_cases/short_text_5_lines.txt",
+    "size": 34
+  },
+  {
+    "path": "04_edge_cases/short_text_17_lines.txt",
+    "size": 125
+  },
+  {
+    "path": "05_random_high_entropy/random_00256KiB_01.bin",
+    "size": 262144
+  },
+  {
+    "path": "05_random_high_entropy/random_00512KiB_02.bin",
+    "size": 524288
+  },
+  {
+    "path": "05_random_high_entropy/random_01024KiB_03.bin",
+    "size": 1048576
+  },
+  {
+    "path": "05_random_high_entropy/random_01536KiB_04.bin",
+    "size": 1572864
+  },
+  {
+    "path": "05_random_high_entropy/random_02048KiB_05.bin",
+    "size": 2097152
+  },
+  {
+    "path": "05_random_high_entropy/random_03072KiB_06.bin",
+    "size": 3145728
+  },
+  {
+    "path": "05_random_high_entropy/random_04096KiB_07.bin",
+    "size": 4194304
+  },
+  {
+    "path": "05_random_high_entropy/random_05120KiB_08.bin",
+    "size": 5242880
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_01.log",
+    "size": 505397
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_02.log",
+    "size": 505412
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_03.log",
+    "size": 505454
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_04.log",
+    "size": 505327
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_05.log",
+    "size": 505358
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_06.log",
+    "size": 505412
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_07.log",
+    "size": 505347
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_08.log",
+    "size": 505340
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_09.log",
+    "size": 505329
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_10.log",
+    "size": 505399
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_11.log",
+    "size": 505274
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_12.log",
+    "size": 505326
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_13.log",
+    "size": 505320
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_14.log",
+    "size": 505268
+  },
+  {
+    "path": "06_repetitive_logs/logs/app_log_15.log",
+    "size": 505258
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_01.csv",
+    "size": 329945
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_02.csv",
+    "size": 329785
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_03.csv",
+    "size": 329862
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_04.csv",
+    "size": 329894
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_05.csv",
+    "size": 329621
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_06.csv",
+    "size": 329792
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_07.csv",
+    "size": 329963
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_08.csv",
+    "size": 329924
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_09.csv",
+    "size": 329884
+  },
+  {
+    "path": "06_repetitive_logs/csv/inventory_10.csv",
+    "size": 330017
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_01.json",
+    "size": 283936
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_02.json",
+    "size": 283942
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_03.json",
+    "size": 283956
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_04.json",
+    "size": 283963
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_05.json",
+    "size": 283959
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_06.json",
+    "size": 283986
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_07.json",
+    "size": 283944
+  },
+  {
+    "path": "06_repetitive_logs/json/chunk_catalog_08.json",
+    "size": 283872
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_01.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_02.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_03.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_04.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_05.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/src/alpha/module_06.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_01/docs/beta/readme_01.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_01/docs/beta/readme_02.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_01/docs/beta/readme_03.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_01/docs/beta/readme_04.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_01/tests/alpha/test_case_01.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_01/tests/alpha/test_case_02.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_01/tests/alpha/test_case_03.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_01/tests/alpha/test_case_04.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_01/assets/beta/asset_01.bin",
+    "size": 65636
+  },
+  {
+    "path": "07_nested_projects/project_01/assets/beta/asset_02.bin",
+    "size": 65736
+  },
+  {
+    "path": "07_nested_projects/project_01/assets/beta/asset_03.bin",
+    "size": 65836
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_01.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_02.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_03.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_04.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_05.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/src/alpha/module_06.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_02/docs/beta/readme_01.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_02/docs/beta/readme_02.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_02/docs/beta/readme_03.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_02/docs/beta/readme_04.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_02/tests/alpha/test_case_01.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_02/tests/alpha/test_case_02.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_02/tests/alpha/test_case_03.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_02/tests/alpha/test_case_04.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_02/assets/beta/asset_01.bin",
+    "size": 65636
+  },
+  {
+    "path": "07_nested_projects/project_02/assets/beta/asset_02.bin",
+    "size": 65736
+  },
+  {
+    "path": "07_nested_projects/project_02/assets/beta/asset_03.bin",
+    "size": 65836
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_01.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_02.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_03.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_04.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_05.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/src/alpha/module_06.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_03/docs/beta/readme_01.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_03/docs/beta/readme_02.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_03/docs/beta/readme_03.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_03/docs/beta/readme_04.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_03/tests/alpha/test_case_01.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_03/tests/alpha/test_case_02.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_03/tests/alpha/test_case_03.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_03/tests/alpha/test_case_04.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_03/assets/beta/asset_01.bin",
+    "size": 65636
+  },
+  {
+    "path": "07_nested_projects/project_03/assets/beta/asset_02.bin",
+    "size": 65736
+  },
+  {
+    "path": "07_nested_projects/project_03/assets/beta/asset_03.bin",
+    "size": 65836
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_01.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_02.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_03.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_04.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_05.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/src/alpha/module_06.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_04/docs/beta/readme_01.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_04/docs/beta/readme_02.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_04/docs/beta/readme_03.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_04/docs/beta/readme_04.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_04/tests/alpha/test_case_01.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_04/tests/alpha/test_case_02.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_04/tests/alpha/test_case_03.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_04/tests/alpha/test_case_04.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_04/assets/beta/asset_01.bin",
+    "size": 65636
+  },
+  {
+    "path": "07_nested_projects/project_04/assets/beta/asset_02.bin",
+    "size": 65736
+  },
+  {
+    "path": "07_nested_projects/project_04/assets/beta/asset_03.bin",
+    "size": 65836
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_01.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_02.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_03.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_04.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_05.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/src/alpha/module_06.py",
+    "size": 232
+  },
+  {
+    "path": "07_nested_projects/project_05/docs/beta/readme_01.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_05/docs/beta/readme_02.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_05/docs/beta/readme_03.md",
+    "size": 11999
+  },
+  {
+    "path": "07_nested_projects/project_05/docs/beta/readme_04.md",
+    "size": 12000
+  },
+  {
+    "path": "07_nested_projects/project_05/tests/alpha/test_case_01.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_05/tests/alpha/test_case_02.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_05/tests/alpha/test_case_03.json",
+    "size": 215
+  },
+  {
+    "path": "07_nested_projects/project_05/tests/alpha/test_case_04.json",
+    "size": 214
+  },
+  {
+    "path": "07_nested_projects/project_05/assets/beta/asset_01.bin",
+    "size": 65636
+  },
+  {
+    "path": "07_nested_projects/project_05/assets/beta/asset_02.bin",
+    "size": 65736
+  },
+  {
+    "path": "07_nested_projects/project_05/assets/beta/asset_03.bin",
+    "size": 65836
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_01.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_02.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_03.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_04.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_05.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_06.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_07.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_08.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_09.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/scenario_gc_10.json",
+    "size": 642
+  },
+  {
+    "path": "08_gc_delete_scenarios/README.md",
+    "size": 95
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_01.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_02.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_03.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_04.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_05.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/snapshots/checkpoint_06.json",
+    "size": 164
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_01.json",
+    "size": 272
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_02.json",
+    "size": 272
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_03.json",
+    "size": 272
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_04.json",
+    "size": 272
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_05.json",
+    "size": 272
+  },
+  {
+    "path": "09_recovery_checkpoints/manifests/recovery_plan_06.json",
+    "size": 272
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_01.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_02.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_03.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_04.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_05.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_06.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_07.json",
+    "size": 300
+  },
+  {
+    "path": "10_bloom_false_positive_cases/case_08.json",
+    "size": 300
+  }
+]

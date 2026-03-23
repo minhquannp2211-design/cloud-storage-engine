@@ -1,0 +1,14 @@
+{
+  "step": 6,
+  "actions": [
+    "load index from disk",
+    "scan chunk files",
+    "verify chunkID -> path mapping",
+    "rebuild missing bloom filter if needed",
+    "run gc dry-run"
+  ],
+  "expected": {
+    "read_chunk_ok": true,
+    "refCount_consistent": true
+  }
+}

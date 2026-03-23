@@ -1,0 +1,35 @@
+# API spec 7
+
+Cloud storage layer 2 dataset.
+This file is generated for testing metadata mapping, Trie directory listing,
+upload/download/delete workflows, rollback scenarios, and dedup interactions.
+- requirement 0: api-7-0
+- requirement 1: api-7-1
+- requirement 2: api-7-2
+- requirement 3: api-7-3
+- requirement 4: api-7-4
+- requirement 5: api-7-5
+- requirement 6: api-7-6
+- requirement 7: api-7-7
+- requirement 8: api-7-8
+- requirement 9: api-7-9
+- requirement 10: api-7-10
+- requirement 11: api-7-11
+- requirement 12: api-7-12
+- requirement 13: api-7-13
+- requirement 14: api-7-14
+- requirement 15: api-7-15
+- requirement 16: api-7-16
+- requirement 17: api-7-17
+- requirement 18: api-7-18
+- requirement 19: api-7-19
+- requirement 20: api-7-20
+- requirement 21: api-7-21
+- requirement 22: api-7-22
+- requirement 23: api-7-23
+- requirement 24: api-7-24
+- requirement 25: api-7-25
+- requirement 26: api-7-26
+- requirement 27: api-7-27
+- requirement 28: api-7-28
+- requirement 29: api-7-29

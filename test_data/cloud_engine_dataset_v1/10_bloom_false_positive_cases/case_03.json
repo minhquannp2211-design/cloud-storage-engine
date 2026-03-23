@@ -1,0 +1,12 @@
+{
+  "case_id": "bloom_fp_03",
+  "bloom_says_present": true,
+  "hash_table_has_chunk": false,
+  "action": "store as new chunk",
+  "expected": [
+    "do not skip write",
+    "insert into exact index",
+    "update bloom filter"
+  ],
+  "input_file_hint": "05_random_high_entropy/random_01024KiB_03.bin"
+}

@@ -1,0 +1,1 @@
+Tệp tiếng Việt để kiểm tra path unicode.

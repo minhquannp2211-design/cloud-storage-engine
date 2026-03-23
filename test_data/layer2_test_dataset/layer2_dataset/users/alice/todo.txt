@@ -1,0 +1,3 @@
+PUT docs
+GET reports
+DEL tmp
