@@ -26,15 +26,37 @@ set(COMMON_INCLUDE_DIRS
         ${CMAKE_CURRENT_SOURCE_DIR}/layer2/app
 )
 
-find_package(SQLite3 QUIET)
+# Dùng package config do vcpkg cung cấp
+find_package(unofficial-sqlite3 CONFIG REQUIRED)
 
-if (SQLite3_FOUND)
-    message(STATUS "SQLite3 found")
-    message(STATUS "SQLite3 include dirs = ${SQLite3_INCLUDE_DIRS}")
-    message(STATUS "SQLite3 libraries    = ${SQLite3_LIBRARIES}")
-else()
-    message(WARNING "SQLite3 not found. Build continues without SQLite support.")
-endif()
+add_library(layer1 STATIC
+        src/bloom_filter.cpp
+        src/chunker.cpp
+        src/chunk_index.cpp
+        src/chunk_store.cpp
+)
+target_include_directories(layer1 PUBLIC ${COMMON_INCLUDE_DIRS})
+
+add_library(layer2_core STATIC
+        layer2/database/Database.cpp
+        layer2/models/NamespaceNode.cpp
+        layer2/managers/FileStructureBuilder.cpp
+        layer2/managers/IndexManager.cpp
+        layer2/managers/NamespaceManager.cpp
+        layer2/managers/RecoveryManager.cpp
+        layer2/services/DeleteService.cpp
+        layer2/services/DownloadService.cpp
+        layer2/services/UploadService.cpp
+        layer2/utils/Chunker.cpp
+        layer2/utils/Hash.cpp
+)
+
+target_include_directories(layer2_core PUBLIC ${COMMON_INCLUDE_DIRS})
+target_link_libraries(layer2_core PUBLIC
+        layer1
+        unofficial::sqlite3::sqlite3
+)
+target_compile_definitions(layer2_core PUBLIC HAVE_SQLITE3=1)
 
 # =========================
 # Layer 1

@@ -11,12 +11,30 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-  
+
+      - name: Clone vcpkg
+        shell: pwsh
+        run: git clone https://github.com/microsoft/vcpkg.git
+
+      - name: Bootstrap vcpkg
+        shell: pwsh
+        run: .\vcpkg\bootstrap-vcpkg.bat
+
+      - name: Install SQLite3
+        shell: pwsh
+        run: .\vcpkg\vcpkg.exe install sqlite3:x64-windows
+
       - name: Configure
-        run: cmake -S . -B build
+        shell: pwsh
+        run: >
+          cmake -S . -B build
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}\vcpkg\scripts\buildsystems\vcpkg.cmake"
+          -DVCPKG_TARGET_TRIPLET=x64-windows
 
       - name: Build
+        shell: pwsh
         run: cmake --build build --config Release
 
       - name: Test
+        shell: pwsh
         run: ctest --test-dir build -C Release --output-on-failure
