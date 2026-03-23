@@ -5,6 +5,29 @@
 std::shared_ptr<Database> Database::instance = nullptr;
 
 #ifdef HAVE_SQLITE3
+void Database::Close()
+{
+    if (db)
+    {
+        if (inTransaction)
+        {
+            sqlite3_exec(db, "ROLLBACK;", nullptr, nullptr, nullptr);
+            inTransaction = false;
+        }
+
+        sqlite3_close(db);
+        db = nullptr;
+    }
+}
+
+void Database::ResetInstance()
+{
+    if (instance)
+    {
+        instance->Close();
+        instance.reset();
+    }
+}
 
 std::shared_ptr<Database> Database::GetInstance(const std::string& dbPath)
 {
@@ -87,13 +110,8 @@ bool Database::InitializeSchema()
 
 Database::~Database()
 {
-    if (db)
-    {
-        sqlite3_close(db);
-        db = nullptr;
-    }
+    Close();
 }
-
 void Database::executeUpdate(const std::string& query)
 {
     if (!db)
@@ -175,6 +193,13 @@ void Database::Rollback()
 }
 
 #else
+
+void Database::Close() {}
+
+void Database::ResetInstance()
+{
+    instance.reset();
+}
 
 // Stub implementations when SQLite3 is not available
 std::shared_ptr<Database> Database::GetInstance(const std::string& dbPath)
