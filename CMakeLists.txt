@@ -26,7 +26,6 @@ set(COMMON_INCLUDE_DIRS
         ${CMAKE_CURRENT_SOURCE_DIR}/layer2/app
 )
 
-# Dùng package config do vcpkg cung cấp
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 
 add_library(layer1 STATIC
@@ -35,6 +34,7 @@ add_library(layer1 STATIC
         src/chunk_index.cpp
         src/chunk_store.cpp
 )
+
 target_include_directories(layer1 PUBLIC ${COMMON_INCLUDE_DIRS})
 
 add_library(layer2_core STATIC
@@ -52,52 +52,14 @@ add_library(layer2_core STATIC
 )
 
 target_include_directories(layer2_core PUBLIC ${COMMON_INCLUDE_DIRS})
+
 target_link_libraries(layer2_core PUBLIC
         layer1
         unofficial::sqlite3::sqlite3
 )
+
 target_compile_definitions(layer2_core PUBLIC HAVE_SQLITE3=1)
 
-# =========================
-# Layer 1
-# =========================
-add_library(layer1 STATIC
-        src/bloom_filter.cpp
-        src/chunker.cpp
-        src/chunk_index.cpp
-        src/chunk_store.cpp
-)
-
-target_include_directories(layer1 PUBLIC ${COMMON_INCLUDE_DIRS})
-
-# =========================
-# Layer 2 core
-# =========================
-add_library(layer2_core STATIC
-        layer2/database/Database.cpp
-        layer2/models/NamespaceNode.cpp
-        layer2/managers/FileStructureBuilder.cpp
-        layer2/managers/IndexManager.cpp
-        layer2/managers/NamespaceManager.cpp
-        layer2/managers/RecoveryManager.cpp
-        layer2/services/DeleteService.cpp
-        layer2/services/DownloadService.cpp
-        layer2/services/UploadService.cpp
-        layer2/utils/Chunker.cpp
-        layer2/utils/Hash.cpp
-)
-
-target_include_directories(layer2_core PUBLIC ${COMMON_INCLUDE_DIRS})
-target_link_libraries(layer2_core PUBLIC layer1)
-
-if (SQLite3_FOUND)
-    target_link_libraries(layer2_core PUBLIC SQLite::SQLite3)
-    target_compile_definitions(layer2_core PUBLIC HAVE_SQLITE3=1)
-endif()
-
-# =========================
-# Layer 1 demo
-# =========================
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
     add_executable(layer1_demo
             src/main.cpp
@@ -110,9 +72,6 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
     endif()
 endif()
 
-# =========================
-# Layer 2 CLI app
-# =========================
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/layer2/app/main.cpp")
     add_executable(app_demo
             layer2/app/main.cpp
@@ -125,9 +84,6 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/layer2/app/main.cpp")
     endif()
 endif()
 
-# =========================
-# Tests
-# =========================
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_layer2.cpp")
     add_executable(test_layer2
             tests/test_layer2.cpp
